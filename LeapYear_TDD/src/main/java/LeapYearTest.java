@@ -6,7 +6,10 @@ public class LeapYearTest{
 	Predicate<Integer> leapPredicate = (x) -> { if(x%4 == 0 ){
 			if(x%100 == 0) {
 				if(x%400 == 0) {
-					return true;
+					if(x%4000 == 0) {
+						return false;
+					}else
+						return true;
 				}
 				else 
 					return false;
